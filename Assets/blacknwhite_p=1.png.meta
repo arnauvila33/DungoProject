@@ -261,7 +261,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 256
     resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
@@ -273,7 +273,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 16384
+    maxTextureSize: 256
     resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
@@ -285,7 +285,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Windows Store Apps
-    maxTextureSize: 16384
+    maxTextureSize: 256
     resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
@@ -297,7 +297,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 16384
+    maxTextureSize: 256
     resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
@@ -309,7 +309,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 16384
+    maxTextureSize: 256
     resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0

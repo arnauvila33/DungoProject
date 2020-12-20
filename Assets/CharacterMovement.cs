@@ -12,6 +12,7 @@ public class CharacterMovement : MonoBehaviour
     private float runSpeed;
     private bool jump=false;
     private bool crouch = false;
+    private static Rigidbody2D rb;
 
     public object GameHandler { get; private set; }
 
@@ -19,6 +20,7 @@ public class CharacterMovement : MonoBehaviour
     {
         controller = GetComponent<CharacterController2D>();
         anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -50,7 +52,12 @@ public class CharacterMovement : MonoBehaviour
 
     public void upStairs()
     {
-        GetComponent<Rigidbody2D>().AddForce(Vector2.up*500);
+        rb.AddForce(Vector2.up*500);
+    }
+
+    public static void invertGravity()
+    {
+        rb.gravityScale *= -1;
     }
 
     void FixedUpdate()
@@ -65,8 +72,12 @@ public class CharacterMovement : MonoBehaviour
         if (collision.name.Equals("Stairs"))
         {
             Gamehandler.changeActionButton(() => upStairs());
-
           
+        }
+
+        if (collision.name.Equals("Gravity"))
+        {
+            Gamehandler.changeActionButton(() => invertGravity());
         }
         //return "";
     }

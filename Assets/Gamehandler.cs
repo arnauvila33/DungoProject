@@ -13,9 +13,12 @@ public class Gamehandler : MonoBehaviour
     private List<Tilemap> tiles;
 
     [SerializeField]
+    private List<SpectersUI> Specters;
+
+    [SerializeField]
     private List<Image> ui;
 
-    public static Image butt;
+    public static Image ActionButton;
 
     public static Image itemImage;
 
@@ -26,7 +29,7 @@ public class Gamehandler : MonoBehaviour
     private List<Color> colorsContrast;
 
     [SerializeField]
-    private List<SpriteRenderer> characters;
+    private static List<SpriteRenderer> characters;
 
     [SerializeField]
     private List<TMP_Text> texts;
@@ -34,7 +37,7 @@ public class Gamehandler : MonoBehaviour
     public void Start()
     {
         itemImage = ui[3];
-        butt = ui[2];
+        ActionButton = ui[2];
         int random = UnityEngine.Random.Range(0, colors.Count);
         foreach(Tilemap tile in tiles)
         {
@@ -60,10 +63,10 @@ public class Gamehandler : MonoBehaviour
         EventTrigger.Entry entry = new EventTrigger.Entry();
         entry.eventID = EventTriggerType.PointerDown;
         entry.callback.AddListener((eventData) => { f(); });
-        butt.GetComponentInChildren<EventTrigger>().triggers.RemoveAt(0);      
-        butt.GetComponentInChildren<EventTrigger>().triggers.Add(entry);
+        if(ActionButton.GetComponentInChildren<EventTrigger>().triggers.Count!=0)
+            ActionButton.GetComponentInChildren<EventTrigger>().triggers.RemoveAt(0);      
+        ActionButton.GetComponentInChildren<EventTrigger>().triggers.Add(entry);
     }
-
 
     
 }
